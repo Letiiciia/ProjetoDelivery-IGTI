@@ -1,5 +1,8 @@
 package igti.desafio.modelo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 
 @Entity(name = "pedido")
+@Getter
+@Setter
 public class Pedido {
 
 	public static String SITUACAO_AGUARDANDO = "Aguardando";
@@ -40,36 +45,5 @@ public class Pedido {
 	@OrderBy("produto")
 	private List<ItemPedido> itens = new ArrayList<>();
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public LocalDateTime getDataHora() {
-		return dataHora;
-	}
-
-	public void setDataHora(LocalDateTime dataHora) {
-		this.dataHora = dataHora;
-	}
-
-	public String getSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
-	}
-
-	public List<ItemPedido> getItens() {
-		return itens;
-	}
-
-	public void setItens(List<ItemPedido> itens) {
-		this.itens = itens;
-	}
 
 }
